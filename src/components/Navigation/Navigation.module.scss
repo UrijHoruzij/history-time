@@ -5,7 +5,7 @@
 	margin-top: -48px;
 	margin-left: 80px;
 	&__counter {
-		color: #42567a;
+		color: var(--black-blue, #42567a);
 		font-family: 'PT Sans';
 		font-size: 14px;
 		font-style: normal;
@@ -23,12 +23,12 @@
 		background: none;
 		width: 50px;
 		height: 50px;
-		border: solid 1px #42567a80;
+		border: solid 1px var(--border, rgba(48, 62, 88, 0.502));
 		border-radius: 50%;
 		cursor: pointer;
 		transition: all 0.3s;
 		&:hover {
-			background: #ffffff;
+			background: var(--white, #ffffff);
 		}
 		&--last {
 			opacity: 0.5;
@@ -36,6 +36,29 @@
 			&:hover {
 				background: none;
 			}
+		}
+	}
+	&__icon {
+		width: 50px;
+		height: 50px;
+	}
+}
+
+@media (max-width: 768px) {
+	.navigation {
+		gap: 10px;
+		margin: 0;
+		margin-left: 20px;
+		&__buttons {
+			gap: 8px;
+		}
+		&__button {
+			width: 25px;
+			height: 25px;
+		}
+		&__icon {
+			width: 25px;
+			height: 25px;
 		}
 	}
 }

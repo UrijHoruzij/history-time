@@ -33,7 +33,6 @@ const Dot = forwardRef<HTMLSpanElement, DotProps>((props, ref) => {
 					{props.index}
 				</span>
 			</div>
-
 			<span ref={ref} className={styles.dot__title}>
 				{props.title}
 			</span>

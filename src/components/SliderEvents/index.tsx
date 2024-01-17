@@ -11,6 +11,7 @@ interface SliderEventsProps {
 }
 
 const SliderEvents = forwardRef<HTMLDivElement, SliderEventsProps>((props, ref) => {
+	const [currentSlide, setCurrentSlide] = useState(0);
 	const sliderRef = useRef<any>(null);
 	const prevRef = useRef<any>(null);
 	const nextRef = useRef<any>(null);
@@ -52,10 +53,22 @@ const SliderEvents = forwardRef<HTMLDivElement, SliderEventsProps>((props, ref) 
 				onSlideChange={(swiper: any) => {
 					setShowPrev(swiper.isBeginning);
 					setShowNext(swiper.isEnd);
+					setCurrentSlide(swiper.activeIndex);
+					console.log(swiper);
+				}}
+				breakpoints={{
+					320: {
+						slidesPerView: 1.5,
+						spaceBetween: 25,
+					},
+					769: {
+						slidesPerView: 3,
+						spaceBetween: 80,
+					},
 				}}>
 				{props.slides?.map((slide, index) => (
 					<SwiperSlide key={`slide-${index}`}>
-						<div className={styles.slide}>
+						<div className={[styles.slide, currentSlide !== index ? styles['slide--activ'] : ''].join(' ')}>
 							<h4 className={styles.slide__title}>{slide.year}</h4>
 							<p className={styles.slide__description}>{slide.description}</p>
 						</div>

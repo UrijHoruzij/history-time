@@ -1,5 +1,15 @@
+:root {
+	--background: #f4f5f9;
+	--white: #ffffff;
+	--blue: #3877ee;
+	--fuschia: #ef5da8;
+	--iris: #5d5fef;
+	--black-blue: #42567a;
+	--black-blue-border: rgba(66, 86, 122, 0.1);
+	--border: rgba(48, 62, 88, 0.502);
+}
 body {
-	background: #f4f5f9;
+	background: var(--background, #f4f5f9);
 	overflow-x: hidden;
 }
 .container {
@@ -7,23 +17,18 @@ body {
 	height: 100%;
 	max-width: 1440px;
 	margin: 0 auto;
-	border-left: solid 1px var(--Black-blue, #42567a10);
-	border-right: solid 1px var(--Black-blue, #42567a10);
+	border-left: solid 1px var(--black-blue-border, #42567a10);
+	border-right: solid 1px var(--black-blue-border, #42567a10);
 	position: relative;
-	&::before {
-		content: '';
-		z-index: -1;
-		width: 1px;
-		height: 100%;
-		background: var(--Black-blue, #42567a10);
-		position: absolute;
-		top: 0;
-		left: 50%;
-	}
 }
 
 @media (max-width: 992px) {
 	.container {
 		max-width: 992px;
+	}
+}
+@media (max-width: 768px) {
+	.container {
+		max-width: 768px;
 	}
 }

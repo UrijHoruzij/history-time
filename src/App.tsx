@@ -6,7 +6,14 @@ import data from './data';
 const App: FC = () => {
 	return (
 		<div className={styles.container}>
-			<Slider data={data} />
+			<Slider
+				data={data}
+				title={
+					<>
+						Исторические <br /> даты
+					</>
+				}
+			/>
 		</div>
 	);
 };
